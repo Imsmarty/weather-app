@@ -1,0 +1,4 @@
+.next10DaysContainer {
+  display: flex;
+  flex-direction: row;
+}
