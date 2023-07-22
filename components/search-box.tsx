@@ -10,9 +10,9 @@ function onClick() {
 
 export default function SearchBox() {
     return (
-        <div className={styles.container}>
-            <input type="text" />
-            <Image src={searchIcon} alt="" onClick={onClick} className={styles.searchIcon}/>
+        <div className={styles.searchBoxContainer}>
+            <input type="text" className={styles.searchInput}/>
+            <Image src={searchIcon} width={30} height={30} alt="" onClick={onClick} className={styles.searchIcon}/>
         </div>
     );
 }

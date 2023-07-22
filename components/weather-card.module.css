@@ -1,6 +1,7 @@
 .weatherCardContainer {
     display: flex;
-    border: 1px solid #000;
+    border: 2px solid #985f99;
+    border-radius: 5px;
     margin: 0px 10px;
     width: 160px;
     flex-direction: column;
