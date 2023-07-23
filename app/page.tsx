@@ -1,6 +1,8 @@
+'use client';
 import WeatherCard from "@/components/weather-card";
 import SearchBox from "@/components/search-box";
 import styles from './page.module.css';
+import { useState } from "react";
 
 const todaysWeather = {
   weather: "cloudy",
@@ -59,18 +61,21 @@ const next10DaysWeather = [
     temperatureC: 20,
     date: "2023-08-01"
   }
-]
+];
 
 export default function Home() {
+
+  const [city, setCity] = useState('San Diego');
+
   return (
-    <div>
+    <div className="appContainer">
       <div  className={styles.headerContainer}>
         <div className={styles.headerText}>Weather App</div>
-        <SearchBox />
+        <SearchBox onSearchClick={setCity} />
       </div>
       
       <div>
-        <div className={styles.sectionHeaderText}>Current weather in San Diego, CA</div>
+        <div className={styles.sectionHeaderText}>{`Current weather in ${city}`}</div>
       <WeatherCard
         {...todaysWeather}
       />
@@ -78,7 +83,7 @@ export default function Home() {
       <div>
         <div className={styles.headerText}>Next 10 days in San Diego, CA</div>
         <div className={styles.next10DaysContainer}>
-          {next10DaysWeather.map( card => <WeatherCard {...card} /> )}
+          {next10DaysWeather.map( card => <WeatherCard key={card.date} {...card} /> )}
         </div>
       </div>
       <a target="_blank" href="https://icons8.com/icon/132/search">Search</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

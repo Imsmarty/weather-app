@@ -6,7 +6,10 @@ import styles from './weather-card.module.css';
 function WeatherDate({ dateString } : { dateString: string }) {
     const date = parseISO(dateString);
     const todaysDate = new Date(Date.now());
-    if (date.getUTCDate() === todaysDate.getUTCDate()) {
+    if (date.getUTCDate() === todaysDate.getUTCDate()
+        && date.getUTCFullYear() === todaysDate.getUTCFullYear()
+        && date.getUTCMonth() === todaysDate.getUTCMonth()
+    ) {
         return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>
     } else {
         return <time dateTime={dateString}>{format(date, 'M/d')}</time>
