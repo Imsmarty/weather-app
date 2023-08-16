@@ -31,9 +31,9 @@ export default function Home() {
   }
 
   return (
-    <main className={styles.main}>
-      <div className={styles.weatherHeader} >
-        <div className={styles.weatherTitle}>
+    <main className={styles.main} id="weather-app-main">
+      <div className={styles.weatherHeader} id="weather-app-header">
+        <div className={styles.weatherTitle} id="weather-app-title">
           Weather App
         </div>
         <WeatherSearch handleSubmit={(city) => onWeatherSearchSubmit(city)} />

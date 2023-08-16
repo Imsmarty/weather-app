@@ -23,6 +23,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 1. Toggle between Celcius and Fahrenheit.
 2. Default weather will be location-based.
 
+## Testing
+
+Tests use Cypress.
+
+1. `npm run dev` to start the development server
+1. `npx cypress open` to run the cypress tests
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
